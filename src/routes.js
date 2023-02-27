@@ -1,12 +1,13 @@
-import NavBar from 'components/NavBar'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import DefaultPage from 'components/DefaultPage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<NavBar />} />
+                <Route path='/' element={<DefaultPage />}>
                     <Route index element={<div>Home</div>} />
+                </Route>
             </Routes>
         </BrowserRouter>
     )

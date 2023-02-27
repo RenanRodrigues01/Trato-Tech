@@ -5,7 +5,7 @@ import {RiShoppingCart2Line, RiShoppingCartFill} from 'react-icons/ri';
 import Busca from 'components/Busca';
 
 const iconesProp = {
-  color: white,
+  color: "white",
   size: 24
 }
 const NavBar = () => {
