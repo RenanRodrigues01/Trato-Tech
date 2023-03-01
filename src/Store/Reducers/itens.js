@@ -236,4 +236,4 @@ const intensSlice = createSlice({
     initialState
 });
 
-export default initialState.reducer;
+export default intensSlice.reducer;
