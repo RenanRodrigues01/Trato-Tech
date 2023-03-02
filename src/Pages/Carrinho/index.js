@@ -5,16 +5,21 @@ import Item from 'components/Item';
 
 const Carrinho = () => {
 
-  const carrinho = useSelector(state => {
+  const {carrinho, total} = useSelector(state => {
+    let total = 0
     const carrinhoReduce = state.carrinho.reduce((itens, itemNoCarrinho) => {
       const item = state.itens.find(item => item.id === itemNoCarrinho.id);
+      total += (item.preco * itemNoCarrinho.quantidade)
       itens.push({
         ...item,
         quantidade: itemNoCarrinho.quantidade
       });
       return itens
     }, []);
-    return carrinhoReduce
+    return {
+      carrinho: carrinhoReduce,
+      total
+    }
   })
 
   return (
@@ -30,7 +35,7 @@ const Carrinho = () => {
             Resumo da compra
           </strong>
           <span>
-            Subtotal: <strong>{0.0.toFixed(2)}</strong>
+            Subtotal: <strong>{total.toFixed(2)}</strong>
           </span>
         </div>
       </div>
