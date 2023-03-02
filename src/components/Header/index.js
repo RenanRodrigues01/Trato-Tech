@@ -7,12 +7,14 @@ const Header = ({ titulo, descricao, imagem, className = '' }) => {
             <h1>{titulo}</h1>
             <h2>{descricao}</h2>
         </div>
-        <div className={styles['header-imagem']}>
-            <img
-                alt={titulo}
-                src={imagem}
-            />
-        </div>
+        {imagem &&  
+          <div className={styles['header-imagem']}>
+              <img
+                  alt={titulo}
+                  src={imagem}
+              />
+          </div>
+        }
     </header>
   )
 }
